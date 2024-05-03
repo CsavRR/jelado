@@ -20,3 +20,8 @@ print('2. feladat')
 beker = int(input('Adja meg a jel sorszámát! ')) - 1
 
 print(f'x={lista[beker].x} y={lista[beker].y}')
+
+def eltelt(kezdO, kezdP, kezdMp, vegO, vegP, vegMp):
+    (vegO * 60 * 60 + vegP * 60 + vegMp) - (kezdO * 60 * 60 + kezdP * 60 + kezdMp)
+
+eltelt()
