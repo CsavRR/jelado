@@ -1,14 +1,19 @@
 class Adat:
     def __init__(self, ora, perc, mperc, x, y):
-        self.ora = ora
-        self.perc = perc
-        self.mperc = mperc
+        self.ora = int(ora)
+        self.perc = int(perc)
+        self.mperc = int(mperc)
         self.x = x
         self.y = y
 
     def __str__(self):
         return f'Óra: {self.ora} \nPerc: {self.perc} \nMásodperc: {self.mperc} \nX: {self.x} \nY: {self.y}'
     
+    def mpbe(self):
+        return int((self.ora * 60 * 60) + (self.perc * 60) + self.mperc)
+
+def eltelt(kezd, veg):
+    int(veg) - int(kezd)
 f = open('jel.txt', 'rt', encoding='UTF-8')
 
 lista = []
@@ -21,7 +26,11 @@ beker = int(input('Adja meg a jel sorszámát! ')) - 1
 
 print(f'x={lista[beker].x} y={lista[beker].y}')
 
-def eltelt(kezdO, kezdP, kezdMp, vegO, vegP, vegMp):
-    (vegO * 60 * 60 + vegP * 60 + vegMp) - (kezdO * 60 * 60 + kezdP * 60 + kezdMp)
 
-eltelt()
+
+teljes = eltelt(lista[0].mpbe(), lista[len(lista) - 1].mpbe())
+
+
+print('4. feladat')
+
+print(f'Időtartam: {int(teljes / 3600)}:{int((teljes % 3600)/60)}:{int((teljes % 3600)%60)}')
