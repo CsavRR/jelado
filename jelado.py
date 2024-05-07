@@ -13,7 +13,8 @@ class Adat:
         return int((self.ora * 3600) + (self.perc * 60) + self.mperc)
 
 def eltelt(kezd, veg):
-    int(veg) - int(kezd)
+    int(veg - kezd)
+
 f = open('jel.txt', 'rt', encoding='UTF-8')
 
 lista = []
@@ -31,6 +32,7 @@ print(f'x={lista[beker].x} y={lista[beker].y}')
 teljes = eltelt(lista[0].mpbe(), lista[len(lista) - 1].mpbe())
 
 
+
 print('4. feladat')
 
-print(f'Időtartam: {int(teljes / 3600)}:{int((teljes % 3600)/60)}:{(teljes % 3600)%60}')
+print(f'Időtartam: {int(teljes / 3600)}:{int((teljes % 3600/60))}:{(teljes % 3600 %60)}')
