@@ -13,7 +13,7 @@ class Adat:
         return int((self.ora * 3600) + (self.perc * 60) + self.mperc)
 
 def eltelt(kezd, veg):
-    int(veg - kezd)
+    return int(veg - kezd)
 
 f = open('jel.txt', 'rt', encoding='UTF-8')
 
